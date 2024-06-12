@@ -1,0 +1,87 @@
+.HomePage{
+    display: flex;
+    background-color: black;
+    color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+}
+.layout{
+    flex: 1;
+    background-image: url('../assets/img/image 13.png');
+    background-size: 100% 100%;
+    /* background-repeat: no-repeat; */
+}
+
+.layout h1{
+    position: relative;
+    left: 60px;
+    top: 70%;
+    font-size: 3.5rem;
+}
+
+
+
+/* Registration Page Css */
+.registrationPage{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 0 5%;
+}
+
+.rgsPageHeading{
+    text-align: center;
+}
+.rgsPageHeading h1{
+    font-size: 4rem;
+    color: #72DB73;
+}
+
+.rgsPageHeading h4{
+    font-size: 1.5rem;
+}
+
+.registrationForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+}
+.input-box , .policy{
+    margin: 10px 0;
+}
+
+.input-box input , button{
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    background-color: #292929;
+    border: none;
+}
+
+.input-box button{
+    padding: 0;
+    border-radius: 28px;
+    background-color: #72DB73;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;   
+}
+
+.input-box , .policy p{
+    color: #FF0000;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.signUpText{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.signUpText span{
+    color: #72DB73;
+}
