@@ -1,0 +1,25 @@
+.page{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    /* font-family: ; */
+}
+
+.left{
+    width: 40%;
+    padding: 10% 7%;
+}
+.right{
+    width: 60%;
+    padding: 8% 5%;
+}
+
+.left h1{
+    color: #72bd73;
+}
+
+.category{
+    display: grid;
+}

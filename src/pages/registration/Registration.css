@@ -1,4 +1,4 @@
-.HomePage{
+.registration{
     display: flex;
     background-color: black;
     color: #ffffff;
@@ -7,7 +7,7 @@
 }
 .layout{
     flex: 1;
-    background-image: url('../assets/img/image 13.png');
+    background-image: url('../../assets/img/image 13.png');
     background-size: 100% 100%;
     /* background-repeat: no-repeat; */
 }
@@ -54,7 +54,7 @@
     margin: 10px 0;
 }
 
-.input-box input , button{
+.input-box input , .input-box button{
     width: 100%;
     height: 40px;
     padding: 0 10px;

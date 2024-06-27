@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Movies() {
+function Chip() {
   return (
     <div>
-      Movies Page
+      Chip Component
     </div>
   )
 }
 
-export default Movies
+export default Chip

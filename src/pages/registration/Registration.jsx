@@ -1,8 +1,8 @@
 import React from 'react'
-import './HomePage.css'
+import './Registration.css'
 import { useState } from 'react'
 
-function HomePage() {
+function Registration() {
     const [userDeatails, setUserDeatails] = useState({ name: '', userName: '', email: '', mobile: '', policy: false })
     const [error, setError] = useState({ name: '', userName: '', email: '', mobile: '', policy: false })
     function validatePhone(phone) {
@@ -38,12 +38,12 @@ function HomePage() {
         if (!userDeatails.policy) {
             setError((error)=>{return{
                 ...error,
-                policy: 'Checkbox is required'
+                policy: 'Check this box if you want to proceed'
             }})
         }
     }
     return (
-        <div className='HomePage'>
+        <div className='registration'>
             <section className='layout'>
                 <h1> Discover new things on Superapp</h1>
             </section>
@@ -118,4 +118,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default Registration
