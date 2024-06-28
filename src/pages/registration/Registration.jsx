@@ -1,8 +1,13 @@
 import React from 'react'
 import './Registration.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { setName , setUserName , setEmail , setMobile } from '../../actions/user'
 
 function Registration() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [userDeatails, setUserDeatails] = useState({ name: '', userName: '', email: '', mobile: '', policy: false })
     const [error, setError] = useState({ name: '', userName: '', email: '', mobile: '', policy: false })
     function validatePhone(phone) {
@@ -10,36 +15,49 @@ function Registration() {
         return phoneRegex.test(phone)
     }
     function validate() {
+        let isError = false ;
         setError({ name: '', userName: '', email: '', mobile: '', policy: false })
         if (userDeatails.name.trim().length === 0) {
+            isError = true 
             setError((error)=>{return{
                 ...error,
                 name: 'Name is required'
             }})
         }
         if (userDeatails.userName.trim().length === 0) {
+            isError = true 
             setError((error)=>{return{
                 ...error,
                 userName: 'UserName is required'
             }})
         }
         if (userDeatails.email.trim().length === 0) {
+            isError = true 
             setError((error)=>{return{
                 ...error,
                 email: 'Email is required'
             }})
         }
         if (userDeatails.mobile.trim().length === 0 || validatePhone(userDeatails.mobile)) {
+            isError = true 
             setError((error)=>{return{
                 ...error,
                 mobile: 'Phone is either empty or invalid'
             }})
         }
         if (!userDeatails.policy) {
+            isError = true 
             setError((error)=>{return{
                 ...error,
                 policy: 'Check this box if you want to proceed'
             }})
+        }
+        if(!isError){
+            dispatch(setName(userDeatails.name))
+            dispatch(setUserName(userDeatails.userName))
+            dispatch(setEmail(userDeatails.email))
+            dispatch(setMobile(userDeatails.mobile))
+            navigate('/genre')
         }
     }
     return (
