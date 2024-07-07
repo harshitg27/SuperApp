@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Registration.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -10,6 +10,11 @@ function Registration() {
     const navigate = useNavigate()
     const [userDeatails, setUserDeatails] = useState({ name: '', userName: '', email: '', mobile: '', policy: false })
     const [error, setError] = useState({ name: '', userName: '', email: '', mobile: '', policy: false })
+    useEffect(() => {
+        if(localStorage.getItem("UserInfo")){
+            navigate("/genre")
+        }
+    } , [])
     function validatePhone(phone) {
         const phoneRegex = /^[0-9]{11}$/;
         return phoneRegex.test(phone)
@@ -57,13 +62,14 @@ function Registration() {
             dispatch(setUserName(userDeatails.userName))
             dispatch(setEmail(userDeatails.email))
             dispatch(setMobile(userDeatails.mobile))
+            localStorage.setItem('UserInfo' , JSON.stringify(userDeatails))
             navigate('/genre')
         }
     }
     return (
         <div className='registration'>
             <section className='layout'>
-                <h1> Discover new things on Superapp</h1>
+                <h1> Discover new things on <br /> Superapp</h1>
             </section>
             <section className='registrationPage'>
                 <div className='rgsPageHeading'>

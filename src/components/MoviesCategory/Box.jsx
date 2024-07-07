@@ -1,35 +1,33 @@
 import React from 'react'
 import { colors } from '../../assets/data/colors'
+import { useDispatch, useSelector } from 'react-redux'
+import { addGenre, removeGenre } from '../../actions/genre'
 
-function Box({genre , index , selectedMovies , setSelectedMovies}) {
-    const handleSelection = () => {
-        if(selectedMovies.includes(index)) {
-            setSelectedMovies(selectedMovies.filter((id) => id !== index ))
-        }else{
-          // if(selectedMovies.length < 3 ){
-            setSelectedMovies([...selectedMovies , index])
-          // }
-        }
+import style from '../../pages/genre/GenrePage.module.css'
+
+function Box({ genre, index }) {
+  const selectedGenre = useSelector(store => store.genreReducer).genres
+  const dispatch = useDispatch()
+  const handleSelection = () => {
+    if (selectedGenre.includes(index)) {
+      dispatch(removeGenre(index))
+    } else {
+      dispatch(addGenre(index))
     }
-    
+  }
+
   return (
     <div
-    style={{
-        border: selectedMovies.includes(index) 
-        ? "4px solid green"
-        : "",
-        padding: '8px' ,
-        width: '12vw',
-        height: '20vh' ,
-        display: 'flex' ,
-        flexDirection:'column' ,
-        justifyContent: 'space-around',
-        borderRadius:'7px' ,
+    className={style.genreCard}
+      style={{
+        outline: selectedGenre.includes(index)
+          ? "4px solid green"
+          : "",
         background: colors[index]
-    }}
-    onClick={handleSelection} >
-      <p>{genre.title} </p>
-      <img src={genre.bgImage} alt={genre.title}  height='50%' />
+      }}
+      onClick={handleSelection} >
+      <div className={style.title} >{genre.title} </div>
+      <img src={genre.bgImage} alt={genre.title} height='50%' />
     </div>
   )
 }

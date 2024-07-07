@@ -1,68 +1,126 @@
-.page{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+.page {
     display: flex;
     height: 100vh;
     width: 100vw;
     background-color: black;
     color: white;
+    font-family: "DM Sans", sans-serif;
     /* font-family: ; */
 }
 
-.left{
-    width: 40%;
-    padding: 10% 7%;
-}
-.right{
-    width: 60%;
-    padding: 5% 5%;
+.left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 40vw;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-top: 5%;
 }
 
-.left h1{
-    color: #72bd73;
+.leftHeader {
+    font-size: 2.5rem;
+    font-family: "Single Day", cursive;
+    color: #72db73;
 }
 
-.selected{
+.leftSubHeader {
+    color: white;
+    font-size: 2.5rem;
+    font-family: "DM Sans", sans-serif;
+}
+
+.right {
+    display: flex;
+    height: 100%;
+    width: 60vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selected {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.selectedGenre{
+
+
+.genreCard {
+    margin: 10px 0px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    border-radius: 12px;
+}
+
+.genreGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 8%;
+    height: 70%;
+    width: 70%;
+    margin-left: 65px;
+    /*added recently*/
+}
+
+.selectedGenre {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 20px;
     padding: 4px 16px;
-    margin: 8px;
-    background-color: #72bd73;
-    /* flex: 0 0 calc(50% - 133px); */
+    margin: 8px 8px;
+    color: white;
+    background-color: #72db73;
+    flex: 0 0 calc(50% - 133px)
 }
-.selectedGenre button{
+
+.selectedGenre button {
     all: unset;
     font-size: large;
     margin-left: 10px;
     cursor: pointer;
-    color: darkgreen
+    color: darkgreen;
 }
 
-.category{
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    /* grid-template-rows: repeat(3 , min(20vh)); */
-    row-gap: 25px;
-    column-gap: 25px;
-    /* height: 500px; */
+.warning {
+    display: flex;
+    margin-top: 10px;
+    font-size: 1rem;
+    align-items: center;
+    color: #ff0000;
 }
 
-.button{
-    min-width: 100px;
-    
-    height: 40px;
-    background-color: #148A08;
+.genreCard .title {
+    font-size: 1.2rem;
+    padding: 8px 0px;
+    width: 100%;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+.genreCard img {
+    object-fit: cover;
+    height: 63%;
+}
+
+.button {
+    position: fixed;
+    bottom: 39px;
     align-self: flex-end;
-    border-radius: 25px;
+    margin-right: 8vw;
+    font-family: "DM Sans", sans-serif;
+    border-radius: 20px;
+    background-color: #148a08;
     color: white;
-    text-align: center;
+    border: none;
+    padding: 10px 55px;
 }

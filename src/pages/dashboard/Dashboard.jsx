@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Chip() {
+function Dashboard() {
   return (
     <div>
-      Chip Component
+      Dashboard
     </div>
   )
 }
 
-export default Chip
+export default Dashboard

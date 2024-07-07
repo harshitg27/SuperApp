@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Single+Day&display=swap');
+
+
 .registration{
+    font-family: "DM Sans" , sans-serif;
     display: flex;
     background-color: black;
     color: #ffffff;
@@ -9,13 +13,17 @@
     flex: 1;
     background-image: url('../../assets/img/image 13.png');
     background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
     /* background-repeat: no-repeat; */
 }
 
 .layout h1{
-    position: relative;
-    left: 60px;
-    top: 70%;
+    position: absolute;
+    /* left: 60px;
+    top: 70%; */
+    bottom: 5%;
+    left: 2%;
     font-size: 3.5rem;
 }
 
@@ -37,6 +45,7 @@
 }
 .rgsPageHeading h1{
     font-size: 4rem;
+    font-family: "Single Day", cursive;
     color: #72DB73;
 }
 
@@ -60,6 +69,7 @@
     padding: 0 10px;
     outline: none;
     background-color: #292929;
+    color: #ffffff;
     border: none;
 }
 
@@ -67,8 +77,7 @@
     padding: 0;
     border-radius: 28px;
     background-color: #72DB73;
-    color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;   
 }
 
@@ -84,4 +93,5 @@
 }
 .signUpText span{
     color: #72DB73;
+    cursor: pointer;
 }
