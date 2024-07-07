@@ -3,7 +3,6 @@ import Box from '../../components/MoviesCategory/Box'
 import { useDispatch, useSelector } from 'react-redux'
 import { IoIosWarning } from 'react-icons/io'
 import { genres } from '../../assets/data/genres'
-import { colors } from '../../assets/data/colors'
 
 import style from './GenrePage.module.css'
 import { useNavigate } from 'react-router-dom'
