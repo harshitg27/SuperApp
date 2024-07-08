@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./NewsWidget.module.css";
 
 function NewsWidget({ news }) {
-	console.log(news);
+	// console.log(news);
 	const formatDate = (date) => {
 		if (date) {
 			const formattedDate = new Date(news.publishedAt).toLocaleDateString(

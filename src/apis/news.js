@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const NEWS_API = '71ed88940e94433794d69b3d8f687ecc' || process.env.REACT_APP_NEWS_API_KEY;
+const NEWS_API = '71ed88940e94433794d69b3d8f687ecc' ;
 
 export const fetchNewsData = async () => {
     let countryCode = 'IN';
@@ -12,7 +12,7 @@ export const fetchNewsData = async () => {
             navigator.geolocation.getCurrentPosition(({ coords }) => {
                 fetchCountryCode(coords.latitude, coords.longitude).then((output) => {
                     countryCode = output;
-                    console.log(countryCode, " from fetchLocation2");
+                    // console.log(countryCode, " from fetchLocation2");
                 });
             });
         }
@@ -22,7 +22,7 @@ export const fetchNewsData = async () => {
         `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${NEWS_API}`
     );
     if (status == 200) {
-        return data.articles[0];
+        return data.articles[10];
     }
 };
 

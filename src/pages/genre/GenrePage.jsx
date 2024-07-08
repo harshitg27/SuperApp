@@ -24,7 +24,7 @@ function GenrePage() {
     }
     const handleNext = () => {
         if (selectedGenre.length > 2) {
-            navigate('/homepage')
+            navigate('/dashboard')
         } else {
             alert('Please select atleast 3 movies')
         }

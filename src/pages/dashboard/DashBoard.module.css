@@ -1,0 +1,76 @@
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.container {
+    height: 88vh;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 30px 30px;
+    grid-auto-flow: row;
+    align-items: stretch;
+    grid-template-areas:
+        "User-Widget Notes-Widget News-Widget"
+        "User-Widget Notes-Widget News-Widget"
+        "Weather-Widget Notes-Widget News-Widget"
+        "Timer-Widget Timer-Widget News-Widget"
+        "Timer-Widget Timer-Widget News-Widget";
+}
+
+.UserWidget {
+    background-color: #5746EA;
+    grid-area: User-Widget;
+    border-radius: 20px;
+}
+
+.WeatherWidget {
+    background-color: #FF4ADE;
+    max-height: 16vh;
+    grid-area: Weather-Widget;
+    border-radius: 20px;
+}
+
+.TimerWidget {
+    background-color: #1E2343;
+    grid-area: Timer-Widget;
+    border-radius: 20px;
+}
+
+.NotesWidget {
+    background-color: #F1C75B;
+    grid-area: Notes-Widget;
+    border-radius: 20px;
+}
+
+.NewsWidget {
+    /* max-width: 350px; */
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    grid-area: News-Widget;
+}
+
+.button{
+    margin-top: 10px;
+    margin-right: 2.5%;
+    align-self: flex-end;
+    background-color: #148A08;
+    color: white;
+    width: 10%;
+    min-width: 100px;
+    min-height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

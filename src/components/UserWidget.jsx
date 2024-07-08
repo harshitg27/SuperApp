@@ -15,15 +15,17 @@ function UserWidget({ user, selectedGenres, type }) {
 	const { name, email, userName } = user;
 	return (
 		<div className={styles.userWidget}>
-			<img src={userAvatar} alt="user avatar" />
-			<div>
+			<div className={styles.userAvatar} >
+				<img src={userAvatar} alt="user avatar"  />
+			</div>
+			<div className={styles.userDetails} >
 				<h3> {name}</h3>
 				<h3>{email}</h3>
 				<h1>{userName}</h1>
 				{selectedGenres && (
 					<div className={styles.genreGrid}>
 						{selectedGenres
-							?.filter((_genre, index) => index < 4)
+							// ?.filter((_genre, index) => index < 4)
 							?.map((genre , index) => (
 								<div key={index} className={styles.pill}>{genres[genre].title}</div>
 							))}
